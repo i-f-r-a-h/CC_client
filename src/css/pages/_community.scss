@@ -1,0 +1,124 @@
+// Css for community page
+.community-page-header {
+    margin-top: 4rem;
+}
+
+.community__logo{
+    font-family: $font-first-fun !important;
+}
+
+.community-intro {
+    &__subheading {
+        font-size: 18px;
+        font-weight: 600;
+
+        &::before {
+            content: "";
+            display: inline-flex;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: $mid-yellow;
+            margin-right: 5px;
+        }
+    }
+
+    &__heading {
+        font-family: $font-first-fun;
+        font-size: 64px;
+        line-height: 62px;
+        letter-spacing: 0.1px;
+        max-width: 800px;
+    }
+
+}
+
+.community-btn {
+    width: 60%;
+    max-width: 202px;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+
+    &__wrapper {
+        margin-top: 4rem;
+    }
+}
+
+
+.community__nav {
+    &__heading {
+        font-weight: 700;
+        margin-top: 30px;
+        margin-bottom: 6px;
+    }
+
+    li,
+    a {
+        color: $black;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: .2rem;
+        margin-bottom: 12px;
+    }
+
+}
+
+
+
+
+
+// categories
+// Define map with categories and colors
+$categories: ("General-Discussion": #e92a2a,
+    "Emergency-Alerts": #39da39,
+    "Disaster-Response": #2626c7,
+    "Volunteering-Opportunities": #d329d3,
+    "Donations": #2ae2e2,
+    "Post-Disaster-Recovery": #f6e22c);
+
+// Loop through categories and generate CSS rules
+@each $category,
+$color in $categories {
+    .category--#{$category} {
+        content: " ";
+        background-color: $color;
+        display: inline-flex;
+        width: 10px;
+        height: 10px;
+        margin-right:0.5rem;
+        border-radius: 50%;
+    }
+    
+}
+
+@each $category,
+$color in $categories {
+    .category__heading--#{$category} {
+        content: " ";
+        background-color: $color;
+        display: inline-flex;
+        width: 30px;
+        height: 30px;
+        margin: 0 15px 5px 0;
+        border-radius: 50%;
+    }
+    
+}
+
+
+@each $category,
+$color in $categories {
+    .category__chip--#{$category} {
+        background-color: $color !important;
+        color: white !important;
+        font-weight: bold;
+        font-size: 1rem !important;
+        width: 100% !important;
+        margin-bottom: 1rem;
+    }
+    
+}
